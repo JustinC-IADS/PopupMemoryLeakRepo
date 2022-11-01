@@ -4,10 +4,10 @@ namespace PopupMemoryLeak;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
     private async void Button1_Clicked(object sender, EventArgs e)
     {
@@ -15,7 +15,7 @@ public partial class MainPage : ContentPage
     }
 
     private async void Button2_Clicked(object sender, EventArgs e)
-    {       
+    {
         _ = await this.ShowPopupAsync(new CustomPopup("Opened from MainPage")).ConfigureAwait(true);
     }
 
@@ -25,8 +25,9 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(newPage);
         _ = await newPage.ShowPopupAsync(new CustomPopup("Opened using New Page")).ConfigureAwait(true);
     }
+
     private async void Button4_Clicked(object sender, EventArgs e)
-    {    
+    {
         GC.Collect();
     }
 }
