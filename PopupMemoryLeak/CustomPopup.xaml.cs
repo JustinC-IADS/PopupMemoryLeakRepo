@@ -10,6 +10,7 @@ public partial class CustomPopup : Popup
 
 		_scenario = scenario;
 
+		// Allocate a bunch of memory 
 		for (int i = 0; i < 500000000; i++)
 		{
 			bytes[i] = 100;
@@ -22,6 +23,7 @@ public partial class CustomPopup : Popup
 
 	~CustomPopup()
 	{
+		// Put breakpoint here:
 		Console.WriteLine($"Finalizer called for {_scenario}");
 	}
 }
